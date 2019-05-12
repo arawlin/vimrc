@@ -13,6 +13,10 @@
 
 1. opt plugins loaded with the `packadd` command
 
+## plugins market
+
+<https://www.vim.org/scripts/index.php>
+
 ## update plugins
 
 ```bash
