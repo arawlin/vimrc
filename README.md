@@ -3,7 +3,7 @@
 ## setup
 
 1. install
-    ```bash
+    ```shell
     git clone https://github.com/snakewarhead/vimrc.git ~/.vim
 
     cd ~/.vim
@@ -17,13 +17,32 @@
 
 <https://www.vim.org/scripts/index.php>
 
-## update plugins
+## plugins add
 
-```bash
-git submodule foreach git pull
+```shell
+git submodule add git_plugin_url pack/plugins/start/xxx
 ```
 
-## Basic Usage
+## plugins update
+
+```shell
+git submodule update --remote --merge
+```
+
+## plugins remove
+
+```shell
+git submodule deinit pack/plugins/start/xxx
+git rm pack/plugins/start/xxx
+rm -Rf .git/modules/pack/plugins/start/xxx
+git commit
+```
+
+## plugins help update
+
+`:helptags ALL`
+
+## plugins usage
 
 ### nerdtree-git-plugin
 
