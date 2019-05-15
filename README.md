@@ -26,6 +26,12 @@ git submodule add git_plugin_url pack/plugins/start/xxx
 ## plugins update
 
 ```shell
+git submodule update --init --recursive
+```
+
+## plugins upgrade
+
+```shell
 git submodule update --remote --merge
 ```
 
