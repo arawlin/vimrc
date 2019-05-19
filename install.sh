@@ -1,5 +1,6 @@
 #!/bin/bash
 
+cd ~/.vim
 # update plugins
 git submodule update --init --recursive
 
