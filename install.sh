@@ -1,6 +1,13 @@
 #!/bin/bash
 
-cd ~/.vim
+set -e
+
+VIM=${VIM:-~/.vim}
+REMOTE=${REMOTE:-https://github.com/snakewarhead/vimrc.git}
+
+git clone "$REMOTE" "$VIM"
+
+cd $VIM
 # update plugins
 git submodule update --init --recursive
 
