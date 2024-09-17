@@ -3,7 +3,7 @@
 set -e
 
 VIM=${VIM:-~/.vim}
-REMOTE=${REMOTE:-https://github.com/snakewarhead/vimrc.git}
+REMOTE=${REMOTE:-https://github.com/arawlin/vimrc.git}
 
 git clone "$REMOTE" "$VIM"
 

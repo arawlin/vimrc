@@ -4,7 +4,7 @@
 
 1. install
     ```shell
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/snakewarhead/vimrc/master/install.sh)"
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/arawlin/vimrc/master/install.sh)"
     ```
 
 1. opt plugins loaded with the `packadd` command
