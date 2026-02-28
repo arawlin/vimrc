@@ -7,7 +7,25 @@
     sh -c "$(curl -fsSL https://raw.githubusercontent.com/arawlin/vimrc/master/install.sh)"
     ```
 
+    Install script behavior:
+    - Reuses existing `~/.vim` repo (pulls latest) instead of failing on re-run.
+    - Backs up existing `~/.vimrc` to `~/.vimrc.bak.<timestamp>` before overwrite.
+
 1. opt plugins loaded with the `packadd` command
+
+## defaults
+
+- Uses persistent undo when Vim supports it (`~/.vim/undodir`).
+- Prefers true color (`termguicolors`) with 256-color fallback.
+- Uses non-recursive mappings for safer key remaps.
+
+## shell vi-mode
+
+Run helper script to enable vi mode in both bash and zsh:
+
+```shell
+./_bash_use_vi.sh
+```
 
 ## plugins market
 
