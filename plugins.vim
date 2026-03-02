@@ -67,3 +67,12 @@ let g:NERDSpaceDelims = 1
 let g:NERDCompactSexyComs = 1
 let g:NERDDefaultAlign = 'left'
 let g:NERDTrimTrailingWhitespace = 1
+
+
+""""""""""""""""" vim-fugitive
+
+" Minimal Git mappings for terminal-first workflow.
+nnoremap <leader>gs :Git<CR>
+nnoremap <leader>gd :Gdiffsplit<CR>
+nnoremap <leader>gb :Gblame<CR>
+nnoremap <leader>gl :Git log -- %<CR>
