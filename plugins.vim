@@ -7,15 +7,32 @@
 " Keep NERDTree lightweight and practical for daily use.
 let g:NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrows = 1
-let g:NERDTreeShowHidden = 1
-let g:NERDTreeIgnore = ['\.pyc$', '\~$', '^\.DS_Store$']
+let g:NERDTreeShowHidden = 0
+let g:NERDTreeIgnore = [
+\ '^\.git$',
+\ '^node_modules$',
+\ '^__pycache__$',
+\ '^dist$',
+\ '^build$',
+\ '^target$',
+\ '^\.cache$',
+\ '\.pyc$',
+\ '\~$',
+\ '^\.DS_Store$'
+\ ]
 
-" Open NERDTree automatically when starting Vim with a directory.
-augroup vimrc_nerdtree_startup
-	autocmd!
-	autocmd StdinReadPre * let s:std_in=1
-	autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-augroup END
+" Reduce git-status refresh overhead in large repositories.
+let g:NERDTreeGitStatusUpdateOnCursorHold = 0
+let g:NERDTreeGitStatusUpdateOnWrite = 0
+let g:NERDTreeGitStatusCwdOnly = 1
+let g:NERDTreeGitStatusDirDirtyOnly = 1
+
+" Open NERDTree manually with Ctrl-n (disabled auto-open for faster startup).
+" augroup vimrc_nerdtree_startup
+" 	autocmd!
+" 	autocmd StdinReadPre * let s:std_in=1
+" 	autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+" augroup END
 
 " toggle
 nnoremap <C-n> :NERDTreeToggle<CR>
