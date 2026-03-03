@@ -10,13 +10,6 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeShowHidden = 0
 let g:NERDTreeIgnore = [
 \ '^\.git$',
-\ '^node_modules$',
-\ '^__pycache__$',
-\ '^dist$',
-\ '^build$',
-\ '^target$',
-\ '^\.cache$',
-\ '\.pyc$',
 \ '\~$',
 \ '^\.DS_Store$'
 \ ]
