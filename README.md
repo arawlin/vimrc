@@ -4,7 +4,7 @@
 
 1. install
     ```shell
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/arawlin/vimrc/master/install.sh)"
+    bash -c "$(curl -fsSL https://raw.githubusercontent.com/arawlin/vimrc/master/install.sh)"
     ```
 
     Install script behavior:
