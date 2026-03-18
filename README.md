@@ -19,6 +19,24 @@
 - Prefers true color (`termguicolors`) with 256-color fallback.
 - Uses non-recursive mappings for safer key remaps.
 
+## colorschemes
+
+Popular dark themes included in this repo:
+
+- `gruvbox`
+- `nord`
+- `onedark`
+- `solarized`
+- `molokai`
+
+Quick switch in Vim:
+
+```vim
+:colorscheme gruvbox
+:colorscheme nord
+:colorscheme onedark
+```
+
 ## shell vi-mode
 
 Run helper script to enable vi mode in both bash and zsh:

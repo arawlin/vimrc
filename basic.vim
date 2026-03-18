@@ -138,7 +138,7 @@ elseif $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme elflord
+    colorscheme onedark
 catch
 endtry
 
