@@ -130,11 +130,21 @@ endif
 " Enable syntax highlighting
 syntax enable 
 
-" Prefer true color in modern terminals with fallback.
-if has('termguicolors')
+" Color capability detection: prefer truecolor, otherwise normalize to 256 colors.
+if has('termguicolors') && ($COLORTERM =~? 'truecolor\|24bit' || $TERM_PROGRAM =~? 'iTerm\|WezTerm\|Apple_Terminal')
     set termguicolors
-elseif $COLORTERM == 'gnome-terminal'
-    set t_Co=256
+else
+    let s:color_count = executable('tput') ? str2nr(system('tput colors 2>/dev/null')) : 0
+
+    if s:color_count <= 0 && (&term =~# '256color' || $TERM =~# '256color' || $COLORTERM =~? 'color')
+        let s:color_count = 256
+    endif
+
+    if s:color_count >= 256
+        set t_Co=256
+    endif
+
+    unlet s:color_count
 endif
 
 try
