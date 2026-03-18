@@ -147,10 +147,18 @@ else
     unlet s:color_count
 endif
 
-try
-    colorscheme onedark
-catch
-endtry
+" Theme policy: rich color depth -> onedark, low color depth -> elflord.
+if &termguicolors || &t_Co >= 256
+    try
+        colorscheme onedark
+    catch
+    endtry
+else
+    try
+        colorscheme elflord
+    catch
+    endtry
+endif
 
 set background=dark
 
