@@ -102,3 +102,19 @@ function! LightlineFilename()
   endif
   return l:fname !=# '' ? l:fname : '[No Name]'
 endfunction
+
+
+"""""""""""""""""" vim-polyglot
+
+" Enable YAML frontmatter syntax highlighting inside Markdown files.
+let g:markdown_fenced_languages = [
+      \ 'bash=sh',
+      \ 'css',
+      \ 'html',
+      \ 'javascript',
+      \ 'json',
+      \ 'python',
+      \ 'typescript',
+      \ 'yaml',
+      \ 'vim',
+      \]
