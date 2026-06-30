@@ -21,11 +21,11 @@ let g:NERDTreeGitStatusCwdOnly = 1
 let g:NERDTreeGitStatusDirDirtyOnly = 1
 
 " Open NERDTree manually with Ctrl-n (disabled auto-open for faster startup).
-" augroup vimrc_nerdtree_startup
-" 	autocmd!
-" 	autocmd StdinReadPre * let s:std_in=1
-" 	autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-" augroup END
+augroup vimrc_nerdtree_startup
+	autocmd!
+	autocmd StdinReadPre * let s:std_in=1
+	autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
+augroup END
 
 " toggle
 nnoremap <C-n> :NERDTreeToggle<CR>
