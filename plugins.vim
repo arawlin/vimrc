@@ -118,3 +118,18 @@ let g:markdown_fenced_languages = [
       \ 'yaml',
       \ 'vim',
       \]
+
+
+"""""""""""""""""" indentLine
+
+" Show vertical indentation guides for code readability.
+let g:indentLine_enabled = 1
+let g:indentLine_char = '│'
+
+" Avoid conflicts with other conceal-heavy plugins.
+let g:indentLine_fileTypeExclude = ['help', 'nerdtree', 'markdown']
+let g:indentLine_concealcursor = ''
+let g:indentLine_conceallevel = 2
+
+" let g:indentLine_color_term = 239
+" let g:indentLine_color_gui = '#3A3A3A'
