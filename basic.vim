@@ -299,8 +299,11 @@ augroup END
 " Always show the status line
 set laststatus=2
 
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
+" Suppress default Vim mode display (-- INSERT -- etc.) to avoid overlap with lightline
+set noshowmode
+
+" Statusline is now managed by lightline; legacy manual statusline is disabled below:
+" set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l\ \ Column:\ %c
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

@@ -69,3 +69,36 @@ nnoremap <leader>gs :Git<CR>
 nnoremap <leader>gd :Gdiffsplit<CR>
 nnoremap <leader>gb :Gblame<CR>
 nnoremap <leader>gl :Git log -- %<CR>
+
+"""""""""""""""""" lightline
+
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'LightlineGitBranch',
+      \   'filename': 'LightlineFilename'
+      \ },
+      \ }
+
+function! LightlineGitBranch()
+  if exists('*FugitiveHead')
+    let l:branch = FugitiveHead()
+    return l:branch !=# '' ? 'git:' . l:branch : ''
+  endif
+  return ''
+endfunction
+
+function! LightlineFilename()
+  let l:fname = expand('%:t')
+  if l:fname =~# 'NERD_tree'
+    return 'NERDTree'
+  endif
+  return l:fname !=# '' ? l:fname : '[No Name]'
+endfunction
